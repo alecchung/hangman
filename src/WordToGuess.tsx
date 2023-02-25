@@ -4,19 +4,13 @@ type WordProps = {
     reveal?: boolean
 }
 
-function HangWord({
+function WordToGuess({
     guessedLetters,
     wordToGuess,
     reveal = false,
 }: WordProps) {
     return (
-	<div style={{
-	    display: "flex",
-	    gap: ".25em",
-	    fontSize: "3.5rem",
-	    fontWeight: "bold",
-	    fontFamily: "monospace",
-	}}>
+	<div className="word-to-guess">
 	    { wordToGuess.split("").map((letter, index) => (
 		<span style={{
 		    borderBottom: ".1em solid black"
@@ -36,4 +30,4 @@ function HangWord({
     )
 }
 
-export {HangWord}
+export {WordToGuess}

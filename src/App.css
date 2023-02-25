@@ -1,0 +1,32 @@
+* {
+    align-self: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.app {
+    max-width: min(100%, 900px);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: auto;
+}
+
+.word-to-guess {
+    display: flex;
+    gap: .25em;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.keyboard {
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(auto-fit,minmax(55px,1fr));
+    gap: .25rem
+}

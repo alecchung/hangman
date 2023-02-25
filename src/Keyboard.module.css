@@ -1,9 +1,13 @@
+div {
+    max-width: min(650px, 98%);
+}
+
 .btn {
     width: 100%;
     border: 3px solid black;
     background: none;
     aspect-ratio: 1 / 1;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     padding: .5rem;
     font-weight: bold;
@@ -25,3 +29,13 @@
     background-color: hsl(200, 100%, 75%);
 }
 
+.btn:nth-child(27){
+    border: transparent;
+    background: transparent;
+}
+
+.btn:nth-child(27):hover{
+    border: transparent;
+    background: transparent;
+    cursor:initial;
+}

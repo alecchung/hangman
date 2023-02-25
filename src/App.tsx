@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import { HangDrawing } from "./Drawing"
-import { HangWord } from './Word'
+import { WordToGuess } from './WordToGuess'
 import { Keyboard } from "./Keyboard"
 import words from './wordList.json'
+import './App.css'
 
 function getWord() {
 	return words[Math.floor(Math.random() * words.length)]
@@ -64,30 +65,16 @@ function App() {
 	}, [])
 
 	return (
-		<div
-			style={{
-				maxWidth: "900px",
-				display: "flex",
-				flexDirection: "column",
-				gap: "2rem",
-				margin: "0 auto",
-				alignItems: "center",
-			}}
-		>
-			<div style={{ fontSize: "2rem", textAlign: "center" }}>
-				{isWinner && "Sie haben gewonnen! "}
-				{isLoser && "Pech gehabt, oder?"}
-				<div />
-				{(isWinner || isLoser) && "Aktualisieren Sie die Seite, um erneut zu spielen."}
-			</div>
+		<div className='app'>
+			<h2>Find the Word, save the man.</h2>
 			<HangDrawing numberOfGuesses={incorrectLetters.length} />
-			<HangWord
+			<WordToGuess
 				reveal={isLoser}
 				guessedLetters={guessedLetters}
 				wordToGuess={wordToGuess}
 			/>
-			<div style={{ alignSelf: "stretch" }}>
-				<Keyboard
+			<div className='keyboard-container'>
+				<Keyboard 
 					disabled={isWinner || isLoser}
 					activeLetters={guessedLetters.filter(letter =>
 						wordToGuess.includes(letter)
