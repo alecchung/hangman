@@ -28,10 +28,10 @@ const KEYS = [
     "Y",
     "Z",
     "",
+    "ẞ",
     "Ä",
     "Ö",
     "Ü",
-    "ẞ"
 ]
 
 type KeyboardProps = {
