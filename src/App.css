@@ -16,6 +16,14 @@ body {
     margin: auto;
 }
 
+.header {
+    padding: 0 20px;
+    margin: auto;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px 1px rgba(87, 98, 98, 0.531);
+    border-radius: 100px;
+}
+
 .word-to-guess {
     display: flex;
     gap: .25em;

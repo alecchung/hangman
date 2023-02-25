@@ -7,7 +7,7 @@ const HEAD = (
 	border: "6px solid black",
 	position: "absolute",
 	top: "30px",
-	right: "-18px"
+	right: "2px"
     }}
     />
 )
@@ -20,7 +20,7 @@ const BODY = (
 	background: "black",
 	position: "absolute",
 	top: "70px",
-	right: 0,
+	right: 20,
     }}
     />
 )
@@ -33,7 +33,7 @@ const RIGHT_ARM = (
 	background: "black",
 	position: "absolute",
 	top: "105px",
-	right: "-40px",
+	right: "-20px",
 	rotate: "-30deg",
 	transformOrigin: "left bottom",
     }}
@@ -48,7 +48,7 @@ const LEFT_ARM = (
 	background: "black",
 	position: "absolute",
 	top: "105px",
-	right: "5px",
+	right: "25px",
 	rotate: "30deg",
 	transformOrigin: "right bottom",
     }}
@@ -63,7 +63,7 @@ const RIGHT_LEG = (
 	background: "black",
 	position: "absolute",
 	top: "135px",
-	right: "-54px",
+	right: "-34px",
 	rotate: "60deg",
 	transformOrigin: "left bottom",
     }}
@@ -78,7 +78,7 @@ const LEFT_LEG = (
 	background: "black",
 	position: "absolute",
 	top: "135px",
-	right: "0px",
+	right: "20px",
 	rotate: "-60deg",
 	transformOrigin: "right bottom",
     }}
@@ -99,25 +99,25 @@ function HangDrawing({ numberOfGuesses }: DrawingProps) {
 		background: "black",
 		position: "absolute",
 		top: 0,
-		right: 0,
+		right: 20,
 	    }} />
 	    <div style={{
 		height: "6px",
 		width: "100px",
 		background: "black",
-		marginLeft: "120px",
+		marginLeft: "80px",
 	    }} />
 	    <div style={{
 		height: "220px",
 		width: "6px",
 		background: "black",
-		marginLeft: "120px",
+		marginLeft: "80px",
 	    }} />
 	    <div style={{
 		height: "6px",
 		width: "200px",
 		background: "black",
-		marginLeft: "20px",
+		marginLeft: "0px",
 	    }} />
 	    </div>
     )

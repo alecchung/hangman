@@ -73,7 +73,9 @@ function App() {
 
 	return (
 		<div className='app'>
-			<h2>Finde das Wort, rette den Mann.</h2>
+			<div className="header">
+				<h3>Finde das Wort, rette den Mann.</h3>
+			</div>
 			<HangDrawing numberOfGuesses={incorrectLetters.length} />
 			<WordToGuess
 				reveal={isLoser}
@@ -101,7 +103,7 @@ function App() {
 					<button>Neustarten</button>
 				</div>
 			</div>
-			
+
 		</div>
 	)
 }
