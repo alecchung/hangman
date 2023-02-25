@@ -17,8 +17,8 @@ function App() {
 		letter => !wordToGuess.includes(letter)
 	)
 
-	const isLoser = incorrectLetters.length >= 6
-	const isWinner = wordToGuess
+	let isLoser = incorrectLetters.length >= 6
+	let isWinner = wordToGuess
 		.split("")
 		.every(letter => guessedLetters.includes(letter))
 
@@ -64,9 +64,16 @@ function App() {
 		}
 	}, [])
 
+	function restart() {
+		isLoser = false
+		isWinner = false
+		setGuessedLetters([])
+		setWordToGuess(getWord())
+	}
+
 	return (
 		<div className='app'>
-			<h2>Find the Word, save the man.</h2>
+			<h2>Finde das Wort, rette den Mann.</h2>
 			<HangDrawing numberOfGuesses={incorrectLetters.length} />
 			<WordToGuess
 				reveal={isLoser}
@@ -74,7 +81,7 @@ function App() {
 				wordToGuess={wordToGuess}
 			/>
 			<div className='keyboard-container'>
-				<Keyboard 
+				<Keyboard
 					disabled={isWinner || isLoser}
 					activeLetters={guessedLetters.filter(letter =>
 						wordToGuess.includes(letter)
@@ -83,6 +90,18 @@ function App() {
 					addGuessedLetter={addGuessedLetter}
 				/>
 			</div>
+
+			<div onClick={restart} className={isLoser || isWinner ? 'show' : 'no-show'}>
+				<div className="popup">
+					<h2>
+						{isWinner ? 'Toll, Sie haben gewonnen!' : ''}
+						{isLoser ? 'Pech gehabt, oder?' : ''}
+					</h2>
+					<h3>Lust auf noch eine Runde?</h3>
+					<button>Neustarten</button>
+				</div>
+			</div>
+			
 		</div>
 	)
 }

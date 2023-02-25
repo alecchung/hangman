@@ -27,6 +27,55 @@ body {
 .keyboard {
     display: grid;
     max-width: 600px;
-    grid-template-columns: repeat(auto-fit,minmax(55px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
     gap: .25rem
+}
+
+.show {
+    position: absolute;
+    display: grid;
+    margin: 5rem auto;
+    height: min(40%, 350px);
+    width: min(100%, 500px);
+    background: rgba(159, 201, 223, 0.829);
+    border: 3px solid #444;
+    justify-content: center;
+}
+
+.no-show {
+    display: none;
+}
+
+.popup {
+    background: #e3e3e3;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.popup button {
+    margin: auto;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 12px 20px;
+    font-size: 16px;
+    /* display: grid; */
+    /* grid-row: auto; */
+    align-items: center;
+    justify-content: center;
+    background: #555;
+    color: #eee;
+    font-weight: 600;
+    height: 3rem;
+    border-radius: 30px;
+
+}
+
+.popup button:active {
+    transform: scale(0.8);
+    /* background: #e3e3e3; */
+    /* box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1); */
+
 }
