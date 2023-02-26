@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { HangDrawing } from "./Drawing"
+import { HangDrawing } from "./HangDrawing"
 import { WordToGuess } from './WordToGuess'
 import { Keyboard } from "./Keyboard"
 import words from './wordList.json'
@@ -33,7 +33,7 @@ function App() {
 
 	useEffect(() => {
 		const handler = (e: KeyboardEvent) => {
-			const key = e.key
+			const key = e.key.toUpperCase()
 			if (!key.match(/^[a-zA-ZäöüßÄÖÜẞ]+$/)) return
 
 			e.preventDefault()
@@ -47,14 +47,17 @@ function App() {
 		}
 	}, [guessedLetters])
 
+	function restart() {
+		setGuessedLetters([])
+		setWordToGuess(getWord())
+	}
 	useEffect(() => {
 		const handler = (e: KeyboardEvent) => {
 			const key = e.key
 			if (key !== "Enter") return
 
 			e.preventDefault()
-			setGuessedLetters([])
-			setWordToGuess(getWord())
+			restart()
 		}
 
 		document.addEventListener("keypress", handler)
@@ -63,13 +66,6 @@ function App() {
 			document.removeEventListener("keypress", handler)
 		}
 	}, [])
-
-	function restart() {
-		isLoser = false
-		isWinner = false
-		setGuessedLetters([])
-		setWordToGuess(getWord())
-	}
 
 	return (
 		<div className='app'>
