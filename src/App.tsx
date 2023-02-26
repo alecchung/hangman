@@ -33,7 +33,7 @@ function App() {
 
 	useEffect(() => {
 		const handler = (e: KeyboardEvent) => {
-			const key = e.key.toUpperCase()
+			const key = e.key == 'ß' ? 'ẞ' : e.key.toUpperCase()
 			if (!key.match(/^[a-zA-ZäöüßÄÖÜẞ]+$/)) return
 
 			e.preventDefault()
