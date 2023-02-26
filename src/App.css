@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: sans-serif;
+    background:#F2F4F7
 }
 
 .app {

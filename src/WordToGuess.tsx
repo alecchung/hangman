@@ -20,7 +20,7 @@ function WordToGuess({
 			? "visible"
 			: "hidden",
 		    color:
-		    !guessedLetters.includes(letter) && reveal ? "read" : "black",
+		    !guessedLetters.includes(letter) && reveal ? "red" : "black",
 		}}>
 		    { letter }
 		</span>
