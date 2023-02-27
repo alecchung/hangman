@@ -40,10 +40,10 @@ function App() {
 			addGuessedLetter(key)
 		}
 
-		document.addEventListener("keypress", handler)
+		document.addEventListener("keydown", handler)
 
 		return () => {
-			document.removeEventListener("keypress", handler)
+			document.removeEventListener("keydown", handler)
 		}
 	}, [guessedLetters])
 
@@ -51,19 +51,36 @@ function App() {
 		setGuessedLetters([])
 		setWordToGuess(getWord())
 	}
+
 	useEffect(() => {
 		const handler = (e: KeyboardEvent) => {
-			const key = e.key
-			if (key !== "Enter") return
+			// const key = e.key
+			if (e.key !== "Enter") return
 
 			e.preventDefault()
 			restart()
 		}
 
-		document.addEventListener("keypress", handler)
+		document.addEventListener("keydown", handler)
 
 		return () => {
-			document.removeEventListener("keypress", handler)
+			document.removeEventListener("keydown", handler)
+		}
+	}, [])
+
+	useEffect(() => {
+		const handler = (e: KeyboardEvent) => {
+			// const key = e.key
+			if (!e.ctrlKey || (e.key !== "r"))  return
+
+			e.preventDefault()
+			location.reload(); 
+		}
+
+		document.addEventListener("keydown", handler)
+
+		return () => {
+			document.removeEventListener("keydown", handler)
 		}
 	}, [])
 
