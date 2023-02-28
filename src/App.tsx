@@ -54,27 +54,21 @@ function App() {
 
 	useEffect(() => {
 		const handler = (e: KeyboardEvent) => {
-			// const key = e.key
-			if (e.key !== "Enter") return
-
 			e.preventDefault()
-			restart()
-		}
 
-		document.addEventListener("keydown", handler)
+			switch (true) {
+				case e.key === "F5":;
+				case e.key === "r" && e.ctrlKey:
+					location.reload();
+					return;
 
-		return () => {
-			document.removeEventListener("keydown", handler)
-		}
-	}, [])
+				case e.key === "Enter":
+				case e.key === "Escape":
+					restart();
 
-	useEffect(() => {
-		const handler = (e: KeyboardEvent) => {
-			// const key = e.key
-			if (!e.ctrlKey || (e.key !== "r"))  return
-
-			e.preventDefault()
-			location.reload(); 
+				default:
+					return;
+			}
 		}
 
 		document.addEventListener("keydown", handler)
