@@ -44,7 +44,7 @@ body {
 .show {
     position: absolute;
     display: grid;
-    margin: 4.3rem auto;
+    margin: 4.7rem auto;
     height: min(50%, 350px);
     width: min(100%, 500px);
     background: #777777ee;
