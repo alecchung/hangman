@@ -57,7 +57,7 @@ function App() {
 			e.preventDefault()
 
 			switch (true) {
-				case e.key === "F5":;
+				case e.key === "F5": ;
 				case e.key === "r" && e.ctrlKey:
 					location.reload();
 					return;
@@ -103,10 +103,11 @@ function App() {
 			<div onClick={restart} className={isLoser || isWinner ? 'show' : 'no-show'}>
 				<div className="popup">
 					<h2>
-						{isWinner ? 'Toll, Sie haben gewonnen!' : ''}
-						{isLoser ? 'Pech gehabt, oder?' : ''}
+						{isWinner ? 'Toll, Sie haben gewonnen!' : 'Pech gehabt, oder?'}
 					</h2>
-					<h3>Lust auf noch eine Runde?</h3>
+					<h3>
+						{isWinner ? 'Lust auf noch eine Runde?' : 'Versuche es noch einmal.'}
+					</h3>
 					<button>Neustarten</button>
 				</div>
 			</div>
