@@ -40,10 +40,10 @@ function App() {
 			addGuessedLetter(key)
 		}
 
-		document.addEventListener("keypress", handler)
+		document.addEventListener("keydown", handler)
 
 		return () => {
-			document.removeEventListener("keypress", handler)
+			document.removeEventListener("keydown", handler)
 		}
 	}, [guessedLetters])
 
@@ -71,10 +71,10 @@ function App() {
 			}
 		}
 
-		document.addEventListener("keypress", handler)
+		document.addEventListener("keydown", handler)
 
 		return () => {
-			document.removeEventListener("keypress", handler)
+			document.removeEventListener("keydown", handler)
 		}
 	}, [])
 
