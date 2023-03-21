@@ -64,12 +64,9 @@ a {
     position: absolute;
     display: grid;
     align-content: center;
-    align-items: center;
-    justify-self: center;
-    justify-items: center;
     padding: 50px;
     margin-top: 5.5rem;
-    height: min(50%, 300px);
+    height: min(65%, 300px);
     width: min(100%, 420px);
     background: #777777ee;
     box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.2);
