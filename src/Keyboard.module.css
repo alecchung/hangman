@@ -1,7 +1,3 @@
-div {
-    max-width: min(650px, 98%);
-}
-
 .btn {
     width: 100%;
     border: 3px solid black;
@@ -29,7 +25,10 @@ div {
     background-color: hsl(200, 100%, 75%);
 }
 
-.btn:nth-child(27){
+.btn:nth-child(18),
+.btn:nth-child(25),
+.btn:nth-child(32)
+ {
     border: transparent;
     background: transparent;
 }

@@ -40,10 +40,10 @@ function App() {
 			addGuessedLetter(key)
 		}
 
-		document.addEventListener("keydown", handler)
+		document.addEventListener("keypress", handler)
 
 		return () => {
-			document.removeEventListener("keydown", handler)
+			document.removeEventListener("keypress", handler)
 		}
 	}, [guessedLetters])
 
@@ -71,17 +71,17 @@ function App() {
 			}
 		}
 
-		document.addEventListener("keydown", handler)
+		document.addEventListener("keypress", handler)
 
 		return () => {
-			document.removeEventListener("keydown", handler)
+			document.removeEventListener("keypress", handler)
 		}
 	}, [])
 
 	return (
 		<div className='app'>
 			<div className="header">
-				<h3>Finde das Wort, rette den Mann.</h3>
+				<a>Galgenmännchen <span>: Finde das Wort, rette den Mann.</span></a>
 			</div>
 			<HangDrawing numberOfGuesses={incorrectLetters.length} />
 			<WordToGuess
@@ -100,8 +100,8 @@ function App() {
 				/>
 			</div>
 
-			<div onClick={restart} className={isLoser || isWinner ? 'show' : 'no-show'}>
-				<div className="popup">
+			<div onClick={restart} className={isLoser || isWinner ? 'popup' : 'no-popup'}>
+				<div className="popup__msg">
 					<h2>
 						{isWinner ? 'Toll, Sie haben gewonnen!' : 'Pech gehabt, oder?'}
 					</h2>

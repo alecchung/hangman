@@ -1,29 +1,48 @@
 * {
-    align-self: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
     font-family: sans-serif;
-    background:#F2F4F7
+    background: #e1e3e6;
+}
+
+a {
+    text-decoration: none;
 }
 
 .app {
-    max-width: min(100%, 900px);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: start;
+    justify-items: center;
+    gap: 1.4rem;
+    margin: 0 auto 10px;
 }
 
 .header {
-    padding: 0 40px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 10px 1px rgba(121, 127, 127, 0.428);
-    border-radius: 0 0 30px 30px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px;
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.header a {
+    font-size: 1.5rem;
+    color: steelblue;
+}
+
+.header span {
+    font-size: 1.2rem;
+    color: #eee;
+}
+
+.header p {
+    color: #eee;
 }
 
 .word-to-guess {
@@ -37,43 +56,49 @@ body {
 .keyboard {
     display: grid;
     max-width: 600px;
-    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
-    gap: .25rem
-}
-
-.show {
-    position: absolute;
-    display: grid;
-    margin: 5.5rem auto;
-    height: min(50%, 350px);
-    width: min(100%, 500px);
-    background: #777777ee;
-    box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.2);
-    /* border: 3px solid #444; */
-    justify-content: center;
-}
-
-.no-show {
-    display: none;
+    grid-template-columns: repeat(7, minmax(55px, 1fr));
+    gap: .25rem;
 }
 
 .popup {
+    position: absolute;
+    display: grid;
+    /* align-content: center; */
+    align-items: center;
+    /* justify-content: center; */
+    justify-items: center;
+    padding: 50px;
+    margin-top: 5.5rem;
+    height: min(50%, 300px);
+    width: min(100%, 500px);
+    background: #777777ee;
+    box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.no-popup {
+    display: none;
+}
+
+.popup__msg {
+    display: grid;
+    justify-items: center;
     background: #e3e3e3;
     border-radius: 5px;
     box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
-.popup button {
+.popup__msg button {
     margin: auto;
     cursor: pointer;
     border: 0;
     box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
     padding: 12px 20px;
     font-size: 16px;
-    /* display: grid; */
-    /* grid-row: auto; */
     align-items: center;
     justify-content: center;
     background: #555;
@@ -81,12 +106,24 @@ body {
     font-weight: 600;
     height: 3rem;
     border-radius: 30px;
-
+    transition: all 0.3s;
 }
 
-.popup button:active {
+.popup__msg button:active {
     transform: scale(0.8);
-    /* background: #e3e3e3; */
-    /* box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1); */
+}
 
+@media (max-width: 600px) {
+    .header a span {
+        display: none;
+    }
+
+    .app {
+        margin: 0;
+        align-content: start;
+    }
+
+    .word-to-guess {
+        font-size: 2rem;
+    }
 }
