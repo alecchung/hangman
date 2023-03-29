@@ -81,7 +81,7 @@ function App() {
 	return (
 		<div className='app'>
 			<div className="header">
-				<a>Galgenmännchen <span>: Finde das Wort, rette den Mann.</span></a>
+				<a>Galgenmännchen <span>: Finde das Wort, und rette den Mann.</span></a>
 			</div>
 			<HangDrawing numberOfGuesses={incorrectLetters.length} />
 			<WordToGuess
