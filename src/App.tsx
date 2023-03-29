@@ -103,7 +103,7 @@ function App() {
 			<div onClick={restart} className={isLoser || isWinner ? 'popup' : 'no-popup'}>
 				<div className="popup__msg">
 					<h2>
-						{isWinner ? 'Toll, Sie haben gewonnen!' : 'Pech gehabt, oder?'}
+						{isWinner ? 'Toll, du hast gewonnen!' : 'Pech gehabt, oder?'}
 					</h2>
 					<h3>
 						{isWinner ? 'Lust auf noch eine Runde?' : 'Versuche es noch einmal.'}
