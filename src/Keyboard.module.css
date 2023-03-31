@@ -27,14 +27,13 @@
 
 .btn:nth-child(18),
 .btn:nth-child(25),
-.btn:nth-child(32)
- {
+.btn:nth-child(32) {
     border: transparent;
     background: transparent;
 }
 
-.btn:nth-child(27):hover{
+.btn:nth-child(27):hover {
     border: transparent;
     background: transparent;
-    cursor:initial;
+    cursor: initial;
 }

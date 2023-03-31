@@ -1,4 +1,4 @@
-# hangman
+# Hangman
 or Galgenmännchen.
 
-A little word game to boost your German power.
+A little word guessing game to boost your knowledge of the German language.
