@@ -51,7 +51,7 @@ function Keyboard({
 }: KeyboardProps) {
     return (
         <div className='keyboard'>
-            {KEYS.map(key => {
+            {KEYS.map((key, index) => {
                 const isActive = activeLetters.includes(key)
                 const isInactive = inactiveLetters.includes(key)
                 return (
@@ -62,7 +62,7 @@ function Keyboard({
                             ${isInactive ? styles.inactive : ""}`
                         }
                         disabled={isInactive || isActive || disabled}
-                        key={key}
+                        key={index}
                     >{key}</button>
                 )
             })}
